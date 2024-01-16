@@ -1,0 +1,277 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('gsans.ttf');
+}
+
+* {
+    padding: 0;
+    margin 0;
+    box-sizing: border-box;
+    font-family: Google Sans;
+}
+
+a {
+    text-decoration: none;
+    border-radius: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(images/cover.png);
+    background-size: cover;
+}
+
+.fLBut,
+.fLBut1,
+.fLBut2 {
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+input:hover {
+    border: 5px solid yellow;
+    transition: .3s;
+}
+
+input {
+    transition: .3s;
+}
+
+
+.fLBut1:active,
+.fLBut:active {
+    background-color: black;
+    color: white;
+    transition: .2s;
+}
+
+.fLButTwo:active,
+.fLButTwo1:active,
+.fLButTwo2:active,
+.fLButTwo3:active,
+.fLButThree:active,
+.fLButThree1:active,
+.fLButThree2:active,
+.fLButThree3:active {
+    background-color: black;
+    color: white;
+    transition: .3s;
+}
+
+.fLButThree {
+    float: left;
+    width: 33.3%;
+    background-color: cadetblue;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+.fLButThree1 {
+    float: left;
+    width: 33.3%;
+    background-color: orangered;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+.fLButThree2 {
+    float: left;
+    width: 33.3%;
+    background-color: darkred;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+    color: white;
+}
+
+#responsive {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    color: white;
+}
+
+.pauseclose {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+}
+
+.commclose {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-bottom: 1vw;
+    color: white;
+}
+
+a:hover {
+    background-color: black;
+    color: white;
+    border: 5px yellow;
+}
+
+#firstLayer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: blue;
+    z-index: 2;
+    display: block;
+    transition: 1s ease;
+}
+
+.fLBut {
+    float: left;
+    width: 33%;
+    background-color: palevioletred;
+    height: inherit;
+    font-size: 5vw;
+    border: none;
+}
+
+.fLBut1 {
+    float: left;
+    width: 33.3%;
+    background-color: skyblue;
+    height: inherit;
+    border: none;
+    font-size: 5vw;
+
+}
+
+#secondLayer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: blue;
+    z-index: 1;
+    display: none;
+    transition: 1s ease;
+}
+
+.fLButTwo {
+    float: left;
+    width: 25%;
+    background-color: cadetblue;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+.fLButTwo1 {
+    float: left;
+    width: 25%;
+    background-color: forestgreen;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+.fLButTwo2 {
+    float: left;
+    width: 25%;
+    background-color: mediumvioletred;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+.fLButTwo3 {
+    float: left;
+    width: 25%;
+    background-color: red;
+    height: inherit;
+    font-size: 4vw;
+    border: none;
+}
+
+#thirdLayer-regular {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: blue;
+    display: none;
+    transition: 1s ease;
+}
+
+#thirdLayer-timed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: blue;
+    display: none;
+    transition: 1s ease;
+}
+
+#thirdLayer-restricted {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: blue;
+    display: none;
+    transition: 1s ease;
+}
+
+.fLBut2 {
+    float: left;
+    width: 33.3%;
+    background-color: yellow;
+    height: inherit;
+    border: none;
+    font-size: 5vw;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2vw;
+    text-align: center;
+    background-color: yellow;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    transition: 1s ease;
+    font-weight: bold;
+}
+
+
+
+.secondLayerBut3 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: yellow;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    border-radius: 5%;
+    transition: 1s ease;
+    margin-left: .5vw;
+    font-weight: bold;
+}

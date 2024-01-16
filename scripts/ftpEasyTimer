@@ -1,0 +1,44 @@
+let g = 180;
+
+let x = setInterval(timeFunc, 1000);
+let paused = new Audio('../audios/pause.mp3');
+
+function waitlang() {
+    document.getElementById("harang").style.display = "inline-block";
+    paused.play();
+    backMusic.volume = .3;
+    clearInterval(x);
+}
+
+function tuloyna() {
+    document.getElementById("harang").style.display = "none";
+    paused.play();
+    backMusic.volume = 1;
+    x = setInterval(timeFunc, 1000);
+}
+
+
+function timeFunc() {
+    if (g == 0) {
+        gameover();
+    } else {
+        var y = new Date();
+        var i = y.setSeconds(g);
+        var min = Math.floor(g / 60);
+        var sec = g % 60;
+        g--;
+        if (sec < 10) {
+            sec = "0" + sec;
+        }
+
+
+        backMusic.addEventListener('ended', function () {
+            this.currentTime = 0;
+            this.play();
+        }, false);
+        backMusic.play();
+    }
+    document.getElementById("clock").innerHTML = min + ':' + sec;
+    document.getElementById("paused-time").innerHTML = min + ':' + sec;
+    document.getElementById("done-time").innerHTML = min + ':' + sec;
+}

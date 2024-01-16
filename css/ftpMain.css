@@ -1,0 +1,562 @@
+@font-face {
+    font-family: 'Google Sans';
+    src: url('gsans.ttf');
+}
+
+* {
+    padding: 0;
+    margin 0;
+    box-sizing: border-box;
+    font-family: Google Sans;
+}
+
+body,
+#harang,
+#winner,
+#gameout,
+#responsive {
+    background-image: ;
+    background-size: cover;
+
+}
+
+#backPic {}
+
+#responsive {
+    display: none;
+    background-image: ;
+    background-size: cover;
+    color: white;
+}
+
+#ooh {
+    width: 100%;
+    height: 100%;
+    background-image: ;
+    background-size: cover;
+}
+
+.game-ground {
+    width: 70vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 5vw;
+    left: 25vw;
+    perspective: 1000px;
+}
+
+.game-ground-eas {
+    width: 45vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 6vw;
+    left: 38vw;
+    perspective: 1000px;
+}
+
+.game-ground-hard {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: -5vw;
+    left: 12vw;
+    perspective: 1000px;
+    transform: scale(.75);
+}
+
+.game-card {
+    width: 10vw;
+    height: 16vh;
+    float: left;
+    margin: 1% 1% 1% 1%;
+    position: relative;
+    transform: scale(1);
+    background-color: aliceblue;
+    transform-style: preserve-3d;
+    transition: transform .2s;
+}
+
+#game-ground-lock {
+    width: 100%;
+    height: 100vh;
+    background-color: green;
+    display: none;
+}
+
+.game-card.flip {
+    transition: .03s;
+    transform: rotateY(180deg);
+    background: orange;
+}
+
+.game-card.flip.correct {
+    animation-name: rubberBand;
+    animation-duration: .5s;
+    background: #1bc45f;
+}
+
+.game-card.flip.wrong {
+    background: red;
+    animation-duration: .1s;
+
+}
+
+.game-card:active {
+    transform: scale(.95);
+    transition: transform .1s;
+}
+
+#details {
+    border: 1px solid black;
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #cce6ff;
+    box-shadow: .2vw .2vw .2vw black;
+    text-align: center;
+}
+
+#details-exp {
+    border: 1px solid black;
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: palevioletred;
+    box-shadow: .2vw .2vw .2vw black;
+    text-align: center;
+    color: white
+}
+
+#details-res {
+    border: 1px solid black;
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #cce6ff;
+    box-shadow: .2vw .2vw .2vw black;
+    text-align: center;
+    background-color: violet;
+    color: black;
+}
+
+#details-timed {
+    border: 1px solid black;
+    width: 22%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: forestgreen;
+    box-shadow: .2vw .2vw .2vw black;
+    text-align: center;
+    color: white;
+}
+
+#orasan {
+    width: 40%;
+    font-size: 4vw;
+    float: right;
+    height: inherit;
+    margin: 0 0 0 0;
+    text-align: center;
+    display: inline-block;
+}
+
+#clock {
+    width: 100%;
+    margin-bottom: ;
+    font-size: 5vw;
+    float: right;
+    height: inherit;
+    margin: 0 0 0 0;
+    text-align: center;
+    display: inline-block;
+    background-color: ;
+    color: ;
+    transition: 1s;
+}
+
+.tit {
+    font-size: 5vw;
+    text-align: center;
+    width: 55%;
+    margin: .5vw 0 0 .5vw;
+    height: inherit;
+    display: inline-block;
+}
+
+.titres {
+    font-size: 2.5vw;
+    text-align: center;
+    width: 55%;
+    margin: .5vw 0 0 .5vw;
+    height: inherit;
+    display: inline-block;
+}
+
+#score {
+    width: 40%;
+    font-size: 4vw;
+    float: right;
+    height: inherit;
+    margin: 3.5vh 0 0 0;
+    text-align: center;
+    display: inline-block;
+}
+
+
+.game-card-front,
+.game-card-back {
+    position: absolute;
+    border: 3px solid pink;
+    padding: 4%;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.game-card-back {
+    transform: rotateY(180deg);
+}
+
+
+#harang {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 1;
+    display: none;
+}
+
+
+#harang-content,
+#harang-content-stats {
+    color: white;
+}
+
+#harang-content {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: 7vw;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+}
+
+#winner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 1;
+    display: none;
+    text-shadow: 2px 2px 2px black;
+}
+
+#winner-content {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: 7vw;
+    text-align: center;
+}
+
+#gameout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    z-index: 1;
+    display: none;
+    background-image: url(../images/backone.png);
+    background-size: cover;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+#gameout-content {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: 7vw;
+    text-align: center;
+}
+
+.pause {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.pauseclose {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    color: white;
+}
+
+.comm {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.commclose {
+    font-size: 1.5vw;
+    text-align: center;
+    margin-bottom: 1vw;
+    color: white;
+}
+
+.secondLayerBut,
+.firstLayerBut {
+    font-size: 2vw;
+    text-align: center;
+    background-color: limegreen;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: white;
+    border-radius: 5%;
+    transition: 1s ease;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.secondLayerBut2 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: yellow;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    border-radius: 5%;
+    transition: 1s ease;
+    margin-left: .5vw;
+    font-weight: bold;
+}
+
+.firstLayerBut2 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: yellow;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    border-radius: 5%;
+    transition: 1s ease;
+    font-weight: bold;
+}
+
+.secondLayerBut:hover,
+.secondLayerBut2:hover,
+.firstLayerBut:hover,
+.firstLayerBut2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    transition: 1s ease;
+}
+
+.commTit {
+    font-size: 2vw;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+#harang-content-stats {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: .5vw;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#winner-content-stats {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    margin-top: .5vw;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.stat-content {
+    text-shadow: 1px 1px 1px black;
+    width: 30%;
+    margin-top: 0;
+    display: inline-block;
+    font-size: 1.5vw;
+    background-color: cadetblue;
+    box-shadow: 2px 2px 2px black;
+}
+
+#paused-moves,
+#paused-time,
+#paused-score,
+#done-score,
+#done-time,
+#done-moves {
+    font-size: 4.5vw;
+    font-weight: bold;
+}
+
+#game-title {
+    border: 1px solid black;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+}
+
+#game-title-exp {
+    border: 1px solid black;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: darkred;
+    color: white;
+}
+
+#game-title-res {
+    border: 1px solid black;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: palevioletred;
+    color: white;
+}
+
+#game-title-timed {
+    border: 1px solid black;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: limegreen;
+    color: black;
+}
+
+.game-type {
+    font-size: 1.5vw;
+}
+
+.details-container {
+    width: 100%;
+    height: 8vw;
+}
+
+.details-move {
+    font-size: 3vw;
+    line-height: inherit;
+}
+
+.filler {
+    margin: auto;
+    border: 1px solid black;
+    width: 50%;
+    height: 5vw;
+    position: absolute;
+}
+
+
+@keyframes rubberBand {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+        transform: rotateY(180deg);
+    }
+}
+
+.secondLayerBut3 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: indianred;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    border-radius: 5%;
+    transition: 1s ease;
+    margin-left: .5vw;
+    font-weight: bold;
+}
+
+.firstLayerBut3 {
+    font-size: 2vw;
+    text-align: center;
+    background-color: indianred;
+    text-decoration: none;
+    border: none;
+    padding: .5vw;
+    color: black;
+    border-radius: 5%;
+    transition: 1s ease;
+    font-weight: bold;
+}
+
+#stopper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: none;
+}

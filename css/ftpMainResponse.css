@@ -1,0 +1,26 @@
+@media only screen and (max-width:1080px) {
+    #responsive {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+        text-shadow:2px 2px 2px black;
+    }
+}
+
+@media only screen and (max-height:650px) {
+    #responsive {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        background-color: black;
+        width: 100%;
+        height: 100vh;
+    }
+}

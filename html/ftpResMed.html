@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta chartset="UTF-8">
+    <title>Pair Mo Lang - Restricted - Medium</title>
+    <link rel="stylesheet" href="../css/ftpMain.css" type="text/css">
+    <link rel="stylesheet" href="../css/ftpMainResponse.css" type="text/css">
+    <script src="../scripts/ftpResponsive.js"></script>
+    <script src="../scripts/ftpRTimer.js"></script>
+</head>
+
+<body id="ooh" onload="shuffle(), pickPic()">
+    <section id="details-res">
+        <p id="game-title-res">Pair Mo Lang! <br><span class="game-type">RESTRICTED MEDIUM</span></p>
+        <div class="details-container">
+            <p class="titres"><span class="details-move">MOVES LEFT</span></p>
+            <p id="orasan"></p>
+        </div>
+        <div class="details-container">
+            <p class="tit"><span class="details-move">POINTS</span></p>
+            <span id="score"></span>
+        </div>
+        <div class="details-container">
+
+        </div>
+        <input type="button" class="firstLayerBut" value="Pause" onclick="waitlang()" />
+        <br><br><br>
+        <input type="button" class="firstLayerBut2" value="Restart" onclick="restartF()" />
+        <br><br><br>
+        <a href="../index.html"><input type="button" class="secondLayerBut3" value="HOME" /></a>
+    </section>
+    <!---<p id="clock">Time check</p>--->
+    <div id="harang">
+        <div id="harang-content">
+            <p class="pause">Paused</p>
+            <p class="comm">Don't get pressured. There is no time left.</p>
+            <input type="button" class="secondLayerBut" value="RESUME" onclick="tuloyna()" />
+            <input type="button" class="secondLayerBut2" value="RESTART" onclick="restartF()" />
+            <a href="../index.html"><input type="button" class="secondLayerBut3" value="HOME" /></a>
+        </div>
+        <div id="harang-content-stats">
+            <p class="commTit">Current Game Statistics</p>
+            <p class="stat-content">Moves Left<br><span id="paused-moves"></span></p>
+
+            <p class="stat-content">Score<br><span id="paused-score"></span></p>
+        </div>
+    </div>
+
+    <div id="responsive">
+        <p class="pauseclose">Please maximize the window to continue playing.</p>
+        <p class="commclose">Stay in this windows size or lose the game.</p>
+    </div>
+
+    <div id="winner">
+        <div id="winner-content">
+            <p class="pause">Congratulations!</p>
+            <p class="comm">You have finished the game!</p>
+            <input type="button" class="secondLayerBut2" value="NEW GAME" onclick="restartF()" />
+            <a href="../index.html"><input type="button" class="secondLayerBut3" value="HOME" /></a>
+        </div>
+        <div id="winner-content-stats">
+            <p class="commTit">Game Statistics</p>
+            <p class="stat-content">Moves Left <br><span id="done-moves"></span></p>
+            <p class="stat-content">Score<br><span id="done-score"></span></p>
+        </div>
+    </div>
+
+    <div id="gameout">
+        <div id="gameout-content">
+            <p class="pause">Game Over!</p>
+            <p class="comm">You're out of moves!</p>
+            <input type="button" class="secondLayerBut2" value="TRY AGAIN" onclick="restartF()" />
+            <a href="../index.html"><input type="button" class="secondLayerBut3" value="HOME" /></a>
+        </div>
+    </div>
+
+    <section class="game-ground">
+
+        <div class="game-card" data-framework="AMM">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/aaron.jpg" alt="Aaron" />
+        </div>
+
+        <div class="game-card" data-framework="AMM">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/aaron.jpg" alt="Aaron" />
+        </div>
+
+        <div class="game-card" data-framework="BA">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/bhea.jpg" alt="Bhea" />
+        </div>
+
+        <div class="game-card" data-framework="BA">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/bhea.jpg" alt="Bhea" />
+        </div>
+
+        <div class="game-card" data-framework="CINV">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/caesar.jpg" alt="Caesar" />
+        </div>
+
+        <div class="game-card" data-framework="CINV">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/caesar.jpg" alt="Caesar" />
+        </div>
+
+        <div class="game-card" data-framework="CJR">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/cj.jpg" alt="CJ" />
+        </div>
+        <div class="game-card" data-framework="CJR">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/cj.jpg" alt="CJ" />
+        </div>
+        <div class="game-card" data-framework="CJFF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/clarence.jpg" alt="Clarence" />
+        </div>
+        <div class="game-card" data-framework="CJFF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/clarence.jpg" alt="Clarence" />
+        </div>
+        <div class="game-card" data-framework="EJF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/edsyl.jpg" alt="Edsyl" />
+        </div>
+        <div class="game-card" data-framework="EJF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/edsyl.jpg" alt="Edsyl" />
+        </div>
+
+        <div class="game-card" data-framework="GJMA">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/grefer.jpg" alt="Grefer" />
+        </div>
+
+        <div class="game-card" data-framework="GJMA">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/grefer.jpg" alt="Grefer" />
+        </div>
+
+        <div class="game-card" data-framework="CGFF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/gwen.jpg" alt="Gwen" />
+        </div>
+
+        <div class="game-card" data-framework="CGFF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/gwen.jpg" alt="Gwen" />
+        </div>
+
+        <div class="game-card" data-framework="MKCFG">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/iyah.jpg" alt="Iyah" />
+        </div>
+
+        <div class="game-card" data-framework="MKCFG">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/iyah.jpg" alt="Iyah" />
+        </div>
+
+        <div class="game-card" data-framework="JJC">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/jj.jpg" alt="JJ" />
+        </div>
+
+        <div class="game-card" data-framework="JJC">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/jj.jpg" alt="JJ" />
+        </div>
+        <div class="game-card" data-framework="JLBR">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/louise.jpg" alt="Louise" />
+        </div>
+        <div class="game-card" data-framework="JLBR">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/louise.jpg" alt="Louise" />
+        </div>
+        <div class="game-card" data-framework="MF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/mcallen.jpg" alt="McAllen" />
+        </div>
+        <div class="game-card" data-framework="MF">
+            <img class="game-card-front" src="../images/icon.png" alt="memory-front" />
+            <img class="game-card-back" src="../images/mcallen.jpg" alt="McAllen" />
+        </div>
+
+
+    </section>
+    <script src="../scripts/ftpResMScript.js"></script>
+</body>
+
+</html>
